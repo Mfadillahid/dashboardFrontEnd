@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashbord Accounting</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- boxicon and Icon Scout-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo">
+                <span>J</span>
+            </div>
+            
+            <span class="logo_name">Journal.in</span>
+            
+        </div>
+        
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="#">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dashboard</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-analytics"></i>
+                    <span class="link-name">Analytics</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Sales</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-comment-alt-message"></i>
+                    <span class="link-name">Reports</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-setting"></i>
+                    <span class="link-name">Settings</span>
+                </a></li>
+                
+            </ul>
+            
+            <ul class="logout-mod">
+                <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+                
+                <li class="mode"><a href="#">
+                    <i class="uil uil-moon"></i>
+                    <span class="link-name">Night Mode</span>
+                </a>
+                
+                <div class="mode-toggle">
+                    <span class="switch"></span>
+                </div>
+            </li>
+            
+            
+        </ul>
+    </div>
+    
+</nav>
+<section class="dashboard">
+    <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+        
+        <div class="search-box">
+            <i class="uil uil-search"></i>
+            <input type="text" name="" id="" placeholder="Search here...">
+        </div>
+        
+        <img src="images/doge2-01.png" alt="">
+        
+    </div>
+    
+    
+    <div class="dash-content">
+        <div class="overview">
+            <div class="title">
+                <i class="uil uil-apps"></i>
+                <span class="text">Overview</span>
+            </div>
+            
+            <div class="boxes">
+                <div class="box box1">
+                    <div class="box-icn">
+                        <i class="uil uil-wallet"></i>
+                    </div>
+                    <div class="box-title">
+                        <span class="text">Accounts Receivable</span>
+                        <br>
+                        <span class="number">$789.985</span>
+                    </div>
+                </div>
+                
+                <div class="box box2">
+                    <div class="box-icn">
+                        <i class="uil uil-bill"></i>
+                    </div>
+                    <div class="box-title">
+                        <span class="text">Accounts Payable</span>
+                        <br>
+                        <span class="number">$169.209</span>
+                    </div>
+                </div>
+                
+                <div class="box box3">
+                    <div class="box-icn">
+                        <i class="uil uil-percentage"></i>
+                    </div>
+                    <div class="box-title">
+                        <span class="text">Equity Ratio</span>
+                        <br>
+                        <span class="number">88.40%</span>
+                    </div>
+                </div>
+                
+                <div class="box box4">
+                    <div class="box-icn">
+                        <i class="uil uil-percentage"></i>
+                    </div>
+                    <div class="box-title">
+                        <span class="text">Debt Ratio</span>
+                        <br>
+                        <span class="number">2.37%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="sub-panel Sales">
+                    <div class="header">
+                        <h3>Sales Report</h3>
+                        <div class="menu">
+                            <i class='bx bx-dots-horizontal-rounded'></i>
+                            <ul class="menu-link">
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Remove</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                <div class="chart">
+                    <div id="chart" ></div>
+                </div>
+                </div>
+
+                <div class="sub-panel activity">
+                    <div class="header">
+                        <h3>Activity Log</h3>
+                        <div class="menu">
+                            <i class='bx bx-dots-horizontal-rounded'></i>
+                            <ul class="menu-link">
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Remove</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                              <th>Activity</th>
+                              <th>Date</th>
+                              <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Sales</th>
+                                <th>09/30/2018</th>
+                                <th>$300.00</th>
+                            </tr>
+                            <tr>
+                              <th>Employee Payment</th>
+                              <th>09/19/2018</th>
+                              <th>$120.00</th>
+                            </tr>
+                            <tr>
+                                <th>Bussiness Trip</th>
+                                <th>09/018/2018</th>
+                                <th>$95.00</th>
+                            </tr>
+                            <tr>
+                                <th>Taxes Payment</th>
+                                <th>09/10/2018</th>
+                                <th>$250.00</th>
+                            </tr>
+                            <tr>
+                                <th>Water Bill</th>
+                                <th>09/04/2018</th>
+                                <th>$95.00</th>
+                            </tr>
+                            <tr>
+                              <th>Electric Bill</th>
+                              <th>09/02/2018</th>
+                              <th>$95.00</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<!-- apexchart dataset -->
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<!-- Javascript script -->
+<script src="apps.js"></script>
+
+</body>
+</html>

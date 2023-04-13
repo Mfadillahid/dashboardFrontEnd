@@ -1,0 +1,504 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+:root{
+    --primary-color:  #0e4bf1;
+    --panel-color :#ffff;
+    --text-color : #000;
+    --black-light-color: #707070;
+    --border-color: #e6e5e5;
+    --toogle-color: #ddd;
+    --box1-color: #4da3ff;
+    --box2-color: #ffe6ac;
+    --box3-color: #e7d1fc;
+    --title-icon-color: #fff;
+    --dashboard-bg:#f0f2f9;
+
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-02: all 0.2s ease;
+}
+/* navigation bar header */
+
+body{
+    height: 100vh;
+    background-color: var(--dashboard-bg);
+}
+/* change color with adding class .dark with change color variable see apps.js */
+body.dark{
+    --primary-color:  #3a3b3c;
+    --panel-color :#242526;
+    --text-color : #ffff;
+    --black-light-color: #ccc;
+    --border-color: #e6e5e5;
+    --toogle-color: #fff;
+    --box1-color: #3a3b3c;
+    --box2-color: #3a3b3c;
+    --box3-color: #3a3b3c;
+    --title-icon-color: #ccc;
+    --dashboard-bg:  #2b2d2d;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: var(--panel-color) ;
+    padding: 10px 14px;
+    border-right: 1px solid var(--border-color);
+    transition: var(--tran-05);
+}
+
+/* close function using class "close" and make neater and js toogle see apps.js*/
+nav.close{
+    width: 73px;
+}
+
+nav .logo-name{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+nav .logo-name .logo{
+    font-size: 39px;
+    text-align: center;
+    font-weight: 800;
+    font-style: italic;
+    color: #0e4bf1;
+    justify-content: center;
+}
+
+nav .logo-image{
+    display: flex;
+    justify-content: center;
+    min-width: 45px;
+    background-color: rebeccapurple;
+}
+
+nav .logo-image img{
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+nav .logo-name .logo_name{
+    font-size: 28px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--text-color);
+
+}
+
+/* setiing menu items */
+nav .menu-items{
+    margin-top: 20px;
+    height: calc(100% - 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-items li{
+    list-style: none;
+
+}
+
+/* dark mode hover effect on body */
+body.dark li a:hover:before{
+    background-color: var(--text-color);
+
+}
+
+.menu-items li a{
+    text-decoration: none;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+.nav-links li a:hover:before{
+    position: absolute;
+    content: "";
+    left: -7px;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+.menu-items li a i{
+    min-width: 45px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--black-light-color);
+}
+
+.menu-items li a .link-name{
+    color: var(--black-light-color);
+    font-size: 18px;
+    font-weight: 400;
+    transition: var(--tran-05);
+}
+
+/* close function using toggle and adding close class see in apps.js */
+/* make the name item disapper and leave only icons */
+nav.close li a .link-name{
+    opacity: 0;
+    pointer-events: none;
+}
+nav.close .logo-name .logo_name{
+    opacity: 0;
+}
+
+
+.nav-links li a:hover i,
+.nav-links li a:hover .link-name{
+    color: var(--primary-color);
+}
+
+body.dark li a:hover i,
+body.dark li a:hover .link-name{
+    color: var(--text-color);
+}
+
+/* menu items costumization */
+.menu-items .logout-mod{
+    /* create alimit of right border */
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+
+}
+.menu-items .mode{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.menu-items .mode-toggle{
+    position: absolute;
+    right: 14px;
+    height: 50px;
+    min-width: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* create switch */
+.mode-toggle .switch{
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toogle-color);
+}
+
+
+.switch:before{
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 15px;
+    width: 15px;
+    background-color: var(--panel-color);
+    border-radius: 50%;
+    transition: var(--tran-03);
+}
+
+body.dark .switch:before{
+    left: 20px;
+}
+
+/* header of dashboard */
+.dashboard{
+    position: relative;
+    background-color: var(--dashboard-bg);
+    height: 100vh;
+    top: 50px;
+    /* 250px is size of sidebar */
+    left: 250px;
+    width: calc(100% - 250px);
+    height: 100vh;
+    padding: 10px 14px;
+    transition: var(--tran-05);
+}
+
+/* make dashboard wider when click toggle */
+.dashboard.close, .dashboard.close .top{
+    left: 73px;
+    width: calc(100% - 73px);
+}
+
+.dashboard .top{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    left: 250px;
+    width: calc(100% - 250px);
+    padding: 10px 14px;
+    background-color: var(--box1-color);
+    align-items: center;
+    top: 0px;
+    transition: var(--tran-05);
+}
+
+.dashboard .top .sidebar-toggle{
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* design the search bar */
+.dashboard .top .search-box{
+    position: relative;
+    height: 45px;
+    max-width: 600px ;
+    width: 100%;
+    margin: 0 30px;
+
+}
+
+.top .search-box input{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   border: 1px solid var(--border-color);
+   background-color: var(--panel-color);
+   border-radius: 5px;
+   color: var(--text-color);
+   font-size: 18px;
+   font-weight: 400;
+   outline: none;
+   padding: 0 25px 0 50px;
+}
+
+.top .search-box i{
+    position: absolute;
+    left: 15px;
+    font-size: 22px;
+    font-weight: 400;
+    z-index: 20;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--black-light-color);
+
+}
+
+.top img{
+    width: 50px;
+    border: radius 50%; ;
+}
+/* dashboard content */
+.dashboard .dash-content{
+    padding-top: 10px;
+    color: var(--text-color);
+    transition: var(--tran-05);
+}
+
+.dash-content .title{
+    font-size: 32px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    margin: 30px 0 30px 0;
+}
+
+.dash-content .title i{
+    height: 50px;
+    width: 50px;
+    background-color: #0e4bf1;
+    border-radius: 5px;
+    color: var(--title-icon-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dash-content .title .text{
+    padding-left: 20px;
+}
+
+/* design box content */
+.dash-content .boxes{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.dash-content .boxes .box{
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: #0e4bf1;
+    width: calc(100%/4 -15px);
+    border-radius: 12px;
+}
+
+.box .box-title{
+    margin-left: 15px;
+}
+
+.box i{
+    font-size: 68px;
+    color: #fff;
+}
+.box .text{
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+.box .number{
+    margin-top: 5px;
+    font-size: 29px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.boxes .box.box4, .boxes .box.box2 {
+    background-color:#009879;
+}
+
+
+/* styling panel that contain chart */
+
+.dashboard .panel {
+    grid-gap: 20px;
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dashboard .panel .sub-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: calc(100%/2);
+    flex-basis: 400px;
+    background-color: var(--title-icon-color);
+    border-radius: 15px;
+    box-shadow: 4px 4px 16px rgba(0,0,0,0, .1);
+    padding: 20px;
+}
+
+.dashboard .panel .sub-panel .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard .panel .sub-panel .header h3{
+    font-size: 23px;
+    font-weight: 600;
+    color: #000;
+}
+
+.dashboard .panel .sub-panel .header .menu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard .panel .sub-panel .header .menu i{
+    font-size: 29px;
+    color: #000;
+}
+
+.dashboard .panel .sub-panel .header .menu-link{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--toogle-color);
+    border-radius: 10px;
+    box-shadow: 4px 4px 16px rgba(0,0,0,0, .1);
+    z-index: 100;
+    list-style-type: none;
+    text-decoration: none;
+    
+    /* create triple dot effect */
+    width: 0px;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--tran-03);
+}
+
+.dashboard .panel .sub-panel .header .menu-link.show{
+    /* using js toggle on triple dot to add show class for menu-links */
+    opacity: 1;
+    width: 140px;
+    pointer-events: visible;
+}
+.dashboard .panel .sub-panel .header .menu-link a{
+    display: block;
+    padding: 6px 16px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #000;
+    text-align: left;
+    transition: var(--tran-03);
+}
+.dashboard .panel .sub-panel .header .menu-link a:hover{
+    background-color: var(--black-light-color);
+}
+
+/* table styling */
+.table {
+    display: flex;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+}
+
+.table table{
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    align-items: flex-start;
+    color: #000;
+    border: none;
+}
+
+.table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+table th,
+table td {
+    padding: 12px 15px;
+}
+table tbody tr {
+    border-bottom: none;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: none;
+}
